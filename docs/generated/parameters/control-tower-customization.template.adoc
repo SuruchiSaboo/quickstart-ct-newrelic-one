@@ -1,0 +1,24 @@
+
+.New Relic configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|NewRelic Account Id
+(`NewRelicAccountNumber`)|`**__Requires input__**`|Your Newrelic account number|NewRelic NerdGraph Access Key
+(`NewRelicAccessKey`)|`**__Requires input__**`|NewRelic NerdGraph User Key|NewRelic NerdGraph API endpoint
+(`NerdGraphEndpoint`)|`https://api.newrelic.com/graphql`|NewRelic NerdGraph endpoint URL
+|===
+.Deployment scope and configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Existing AWS accounts include list
+(`LaunchAccountList`)|`**__Requires input__**`|Comma delimited list of accounts to be included during initial launch. All new accounts will be automatically included via AWS Control Tower LifeCycle events.|StackSet name
+(`StackSetName`)|`NewRelic-Integration`|NewRelic CT Integration StackSet name|StackSet template URL
+(`StackSetUrl`)|`**__Requires input__**`|NewRelic CT Integration StackSet template URL
+|===
+.AWS Quick Start configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Quick Start S3 bucket name
+(`QSS3BucketName`)|`aws-quickstart`|S3 bucket that you created for your copy of Quick Start assets. Use this if you decide to customize the Quick Start. This bucket name can include numbers, lowercase letters, uppercase letters, and hyphens, but do not start or end with a hyphen (-).|Quick Start S3 key prefix
+(`QSS3KeyPrefix`)|`quickstart-ct-newrelic-one/`|S3 key prefix that is used to simulate a directory for your copy of Quick Start assets. Use this if you decide to customize the Quick Start. This prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slashes (/). See https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html.
+|===

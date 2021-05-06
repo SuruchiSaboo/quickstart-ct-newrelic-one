@@ -1,1 +1,21 @@
-// placeholder
+
+:template_aws_cloudformation_customresource:
+:template_aws_events_rule:
+:template_aws_iam_role:
+:template_aws_lambda_function:
+:template_aws_lambda_permission:
+:template_aws_s3_bucket:
+:template_aws_secretsmanager_secret:
+:template_aws_sns_subscription:
+:template_aws_sns_topic:
+:template_aws_sqs_queue:
+:template_cloudformation:
+:template_copyzips:
+:template_custom_copyzips:
+:template_events:
+:template_iam:
+:template_lambda:
+:template_s3:
+:template_secretsmanager:
+:template_sns:
+:template_sqs:
