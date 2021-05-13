@@ -13,7 +13,7 @@
 |Parameter label (name) |Default value|Description|Existing AWS accounts include list
 (`LaunchAccountList`)|`**__Requires input__**`|Comma delimited list of accounts to be included during initial launch. All new accounts will be automatically included via AWS Control Tower LifeCycle events.|StackSet name
 (`StackSetName`)|`NewRelic-Integration`|NewRelic CT Integration StackSet name|StackSet template URL
-(`StackSetUrl`)|`**__Requires input__**`|NewRelic CT Integration StackSet template URL
+(`StackSetUrl`)|`https://aws-quickstart.s3.amazonaws.com/quickstart-ct-newrelic-one/templates/newrelic-stack-set.yml`|NewRelic CT Integration StackSet template URL
 |===
 .AWS Quick Start configuration
 [width="100%",cols="16%,11%,73%",options="header",]
