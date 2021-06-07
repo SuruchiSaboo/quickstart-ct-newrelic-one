@@ -849,12 +849,12 @@ p.footer-text a{color:#d7d8d8}
 <li><a href="#_uninstall_the_new_relic_integration">Uninstall the New Relic integration</a></li>
 </ul>
 </li>
-<li><a href="#_best_practices_for_using_new_relic_integration_on_aws">Best practices for using New Relic integration on AWS</a></li>
+<li><a href="#_best_practices_for_using_new_relic_aws_control_tower_integration_on_aws">Best practices for using New Relic AWS Control Tower integration on AWS</a></li>
 <li><a href="#_security">Security</a></li>
 <li><a href="#_faq">FAQ</a></li>
 <li><a href="#_parameter_reference">Parameter reference</a>
 <ul class="sectlevel2">
-<li><a href="#_parameters_for_deploying_new_relic">Parameters for deploying New Relic</a></li>
+<li><a href="#_parameters_for_deploying_new_relic_aws_control_tower_integration">Parameters for deploying New Relic AWS Control Tower integration</a></li>
 </ul>
 </li>
 <li><a href="#_send_us_feedback">Send us feedback</a></li>
@@ -902,10 +902,13 @@ report bugs, or submit feature ideas for this Quick Start.
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This Quick Start reference deployment guide provides instructions for deploying the New Relic integration on the AWS Cloud.</p>
+<p>This Quick Start reference deployment guide provides instructions for deploying the New Relic AWS Control Tower integration on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p>This Quick Start helps you set up New Relic&#8217;s AWS integrations in your AWS Control Tower–managed multiaccount environment (landing zone). When it&#8217;s deployed to your AWS Control Tower management account, new accounts you enroll in your landing zone are automatically integrated with New Relic. This Quick Start is for developers, DevOps, cloud administrators, and system integrators.</p>
+<p>This Quick Start allows you to streamline the observability of your <a href="https://aws.amazon.com/controltower/">AWS Control Tower</a> managed <a href="https://aws.amazon.com/controltower/features/#Landing_Zone">landing zone</a> with New Relic using <a href="https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/introduction-aws-integrations/">New Relic AWS integrations</a>. Once you delpoy this Quick Start, any new enrolled accounts in your AWS Control Tower managed organizations are automatically monitored with your New Relic account, from the moment they are launched. It also lets you link existing accounts with New Relic, in case you&#8217;ve already set up your landing zone. You can then manage all your AWS operational data and insights from one place, with no need to hop back and forth between multiple AWS accounts or other set of observability tools.</p>
+</div>
+<div class="paragraph">
+<p>This Quick Start is for developers, devops engineers, cloud administrators, and system integrators to fully automate observability of your AWS Control Tower landing zone with New Relic.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -925,13 +928,14 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 <h2 id="_new_relic_aws_control_tower_integration_on_aws">New Relic AWS Control Tower Integration on AWS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The New Relic integration Quick Start helps to streamline the observability of AWS accounts with New Relic. When you enroll a new AWS account, it&#8217;s automatically integrated with your New Relic account using <a href="https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/introduction-aws-integrations/" target="_blank" rel="noopener">New Relic AWS integrations</a>. You can manage all of your AWS operational data and insights from one place without toggling between accounts and observability tools.</p>
+<p>The New Relic AWS Control Tower integration Quick Start allows you to scale the observability
+of your AWS Control Tower managed landing zones with New Relic, right from the moment accounts are enrolled. You spend no time managing New Relic integration while automatically monitoring your AWS enviornment from New Relic.</p>
 </div>
 <div class="paragraph">
-<p>New Relic integration requires that you grant read permission to operational telemetry data from your AWS account. To do this, use an AWS Identity and Access Management (IAM) role that uses <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html" target="_blank" rel="noopener">IAM cross-account access</a>. New Relic integration uses the Amazon CloudWatch API to collect telemetry data for your monitored AWS services. For more information, see <a href="https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/integrations-managed-policies" target="_blank" rel="noopener">Integrations and managed policies</a>.</p>
+<p>New Relic AWS Control Tower integration requires that you grant read permission to operational telemetry data from your AWS account. To do this, use an AWS Identity and Access Management (IAM) role that uses <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html" target="_blank" rel="noopener">IAM cross-account access</a>. New Relic AWS Control Tower integration uses the Amazon CloudWatch API to collect telemetry data for your monitored AWS services. For more information, see <a href="https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/integrations-managed-policies" target="_blank" rel="noopener">Integrations and managed policies</a>.</p>
 </div>
 <div class="paragraph">
-<p>For more information, see <a href="https://newrelic.com" target="_blank" rel="noopener">New Relic</a>.</p>
+<p>If you are new to New Relic, please refer to <a href="https://newrelic.com">New Relic</a> to learn about it.</p>
 </div>
 </div>
 </div>
@@ -966,7 +970,7 @@ After you deploy the Quick Start, create <a href="https://docs.aws.amazon.com/aw
 <h2 id="_software_licenses">Software licenses</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This New Relic integration Quick Start requires a New Relic license key, which is available with your New Relic account. To create an account, see <a href="https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-pricing-billing/new-relic-one-pricing-billing" target="_blank" rel="noopener">New Relic One pricing and billing</a>. You can also sign up for a free New Relic account in <a href="https://aws.amazon.com/marketplace/seller-profile?id=cea9ae0f-34a2-4b53-aabf-5cf5c2c67938" target="_blank" rel="noopener">AWS Marketplace</a>. To access administrator features and support, ensure that you choose a Standard, Pro, or Enterprise plan.</p>
+<p>This Quick Start requires that you have access to a New Relic account. You can create an account using the <a href="https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-pricing-billing/new-relic-one-pricing-billing">New Relic One pricing plan</a>. Be sure to choose a Standard, Pro, or Enterprise tier for access to administrator features and support. If you don&#8217;t already have a New Relic account, you can sign up for a perpetually free access to New Relic from <a href="https://aws.amazon.com/marketplace/seller-profile?id=cea9ae0f-34a2-4b53-aabf-5cf5c2c67938">AWS Marketplace</a>. The free tier includes 100 GB of data ingest every month, one full access user and unlimited basic users. With your New Relic One pay-as-you-go plan, you only pay for what you use beyond the free tier each month.</p>
 </div>
 </div>
 </div>
@@ -974,13 +978,13 @@ After you deploy the Quick Start, create <a href="https://docs.aws.amazon.com/aw
 <h2 id="_architecture">Architecture</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Deploying this Quick Start with default parameters builds the following New Relic integration in the AWS Control Tower environment on the AWS Cloud.</p>
+<p>Deploying this Quick Start builds the following resources in your AWS Control Tower managed accounts.</p>
 </div>
 <div id="NewRelic-CT-arch" class="imageblock">
 <div class="content">
 <img src="images/newrelic-one-ct-integration-arch.png" alt="New Relic AWS Control Tower Integration diagram" width="100%">
 </div>
-<div class="title">Figure 1. New Relic integration architecture diagram</div>
+<div class="title">Figure 1. New Relic AWS Control Tower integration architecture diagram</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1021,7 +1025,7 @@ and <a href="https://aws.amazon.com/training/" target="_blank" rel="noopener">AW
 deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p>This Quick Start assumes familiarity with <a href="https://aws.amazon.com/controltower/" target="_blank" rel="noopener">AWS Control Tower</a>. For more information, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-with-control-tower.html" target="_blank" rel="noopener">Getting Started with AWS Control Tower</a>.</p>
+<p>This Quick Start assumes familiarity with AWS Control Tower. For information about AWS Control Tower, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-with-control-tower.html">Getting Started with AWS Control Tower</a> in the AWS Control Tower User Guide.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1100,7 +1104,7 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 <p><sup>2</sup> <span class="small">All AWS Lambda functions deployed by this Quick Start use unreserved concurrency.</span></p>
 </div>
 <div class="paragraph">
-<p><sup>3</sup> <span class="small">This Quick Start deploys a cross-account trust IAM role and associated managed policy for New Relic integration on each AWS account that you include in the deployment.</span></p>
+<p><sup>3</sup> <span class="small">This Quick Start deploys a cross-account trust IAM role and associated managed policy for New Relic AWS Control Tower integration on each AWS account that you include in the deployment.</span></p>
 </div>
 </div>
 <div class="sect3">
@@ -1152,6 +1156,14 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 </ul>
 </div>
 <div class="paragraph">
+<p>To find the most recent list of Regions supported by AWS Control Tower, run the following AWS CLI command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>aws ssm get-parameters-by-path --path "/aws/service/global-infrastructure/services/controltower/regions" --output json --query "Parameters[].Value"</pre>
+</div>
+</div>
+<div class="paragraph">
 <p>For more information, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/" target="_blank" rel="noopener">AWS Regional Services</a>.</p>
 </div>
 <div class="admonitionblock tip">
@@ -1192,27 +1204,33 @@ Certain Regions are available on an opt-in basis. For more information, see <a h
 <li>
 <p>New Relic account ID</p>
 <div class="paragraph">
-<p>This Quick Start integrates your landing zone with a single New Relic account. <a href="https://one.newrelic.com">Log in to your New Relic account</a>. For more information, see <a href="https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/account-id/" target="_blank" rel="noopener">Account ID</a>.</p>
+<p>This Quick Start integrates your landing zone with a single New Relic account. <a href="https://one.newrelic.com">Log in to your New Relic account</a> and find the account ID. For more information, see <a href="https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/account-id/" target="_blank" rel="noopener">Account ID</a>.</p>
 </div>
 </li>
 <li>
-<p>New Relic NerdGraph API key</p>
+<p>New Relic NerdGraph User key</p>
 <div class="paragraph">
-<p>For all deployment options, generate a New Relic API key, and enter it as parameter in the deployment. This Quick Start integrates New Relic NerdGraph with AWS Control Tower and New Relic. For more information, see <a href="https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/" target="_blank" rel="noopener">Introduction to New Relic NerdGraph, our GraphQL API</a>.</p>
+<p>For all deployment options, use a New Relic User key, and enter it as parameter in the deployment. This Quick Start uses New Relic NerdGraph API for linking your AWS accounts with New Relic. For more information, see <a href="https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/" target="_blank" rel="noopener">Introduction to New Relic NerdGraph, our GraphQL API</a>.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://one.newrelic.com">Log in to your New Relic account</a>. For more information, see <a href="https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/account-id/" target="_blank" rel="noopener">Account ID</a>.</p>
+<p><a href="https://one.newrelic.com">Log in to your New Relic account</a>. Create a User key, if you don&#8217;t have one already. For more information, see <a href="https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#user-api-key" target="_blank" rel="noopener">User key</a>.</p>
 </div>
 </li>
 <li>
-<p>(Optional) Launch an AWS account list</p>
+<p>New Relic NerdGraph API endpoint</p>
 <div class="paragraph">
-<p>If you have existing AWS accounts that are managed by AWS Control Tower, deploy this Quick Start into all of your accounts by adding a comma-delimited list of AWS account IDs.</p>
+<p>Determine if your New Relic account is in US or EU data center. For more information, see <a href="https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/get-started/our-eu-us-region-data-centers/">New Relic data centers</a>. Use the default NerdGraph endpoint unless your New Relic account uses an EU data center. For more information, see <a href="https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/#authentication">NerdGraph endpoints</a></p>
+</div>
+</li>
+<li>
+<p>(Optional) Existing AWS account ID list</p>
+<div class="paragraph">
+<p>In case you&#8217;ve already set up your landing zone, and want to monitor existing AWS accounts enrolled in Control Tower managed organization with New Relic, supply the list of AWS account IDs (as comma separated string).</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Log in to an AWS Control Tower–management account.</p>
+<p>Log in to an AWS Control Tower management account.</p>
 </li>
 <li>
 <p>For a list of managed accounts, navigate to <a href="https://console.aws.amazon.com/controltower/home/accounts?" target="_blank" rel="noopener">AWS Control Tower</a>.</p>
@@ -1272,7 +1290,7 @@ This Quick Start enables all AWS integrations that are available in New Relic. F
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-If you want to enroll existing AWS accounts into New Relic integration, ensure that your AWS accounts are enrolled in AWS Control Tower. This Quick Start does not support enrolling AWS accounts from organizations that are outside of AWS Control Tower. Your list of existing AWS accounts must be formatted as a comma-delimited string (for example, <code>account_id1,account_id2,account_id3</code>).
+If you want to enroll existing AWS accounts into New Relic AWS Control Tower integration, ensure that your AWS accounts are enrolled in AWS Control Tower. This Quick Start does not support enrolling AWS accounts from organizations that are outside of AWS Control Tower. Your list of existing AWS accounts must be formatted as a comma-delimited string (for example, <code>account_id1,account_id2,account_id3</code>).
 </td>
 </tr>
 </table>
@@ -1305,7 +1323,7 @@ If you want to enroll existing AWS accounts into New Relic integration, ensure t
 <p>Choose <strong>Create stack</strong> to deploy the stack.</p>
 </li>
 <li>
-<p>Monitor the status of the stack. When the status is <strong>CREATE_COMPLETE</strong>, the New Relic integration deployment is ready.</p>
+<p>Monitor the status of the stack. When the status is <strong>CREATE_COMPLETE</strong>, the New Relic AWS Control Tower integration deployment is ready.</p>
 </li>
 <li>
 <p>To view the created resources, see the values displayed in the <strong>Outputs</strong> tab for the stack.</p>
@@ -1319,7 +1337,7 @@ If you want to enroll existing AWS accounts into New Relic integration, ensure t
 <h2 id="_test_the_deployment">Test the deployment</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When you enroll a new AWS Control Tower–managed account, the deployment sets up the IAM role for New Relic integration. You can then see the new account show up in the New Relic UI.</p>
+<p>When you enroll a new AWS Control Tower–managed account, the deployment sets up the IAM role for New Relic AWS Control Tower integration. You can then see the new account show up in the New Relic UI.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1346,7 +1364,7 @@ If you want to enroll existing AWS accounts into New Relic integration, ensure t
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Deleting the New Relic integration Quick Start stack and StackSets also deletes the New Relic IAM roles deployed in your AWS accounts, which removes cross-account trust with New Relic. This Quick Start does not, however, remove account links to New Relic. To remove an account from New Relic, see the subsequent section <strong>Uninstall the new Relic integration</strong>.
+Deleting the New Relic AWS Control Tower integration Quick Start stack and StackSets also deletes the New Relic IAM roles deployed in your AWS accounts, which removes cross-account trust with New Relic. This Quick Start does not, however, remove account links to New Relic. To remove an account from New Relic, see the subsequent section <strong>Uninstall the new Relic integration</strong>.
 </td>
 </tr>
 </table>
@@ -1389,10 +1407,10 @@ Deleting the New Relic integration Quick Start stack and StackSets also deletes 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_best_practices_for_using_new_relic_integration_on_aws">Best practices for using New Relic integration on AWS</h2>
+<h2 id="_best_practices_for_using_new_relic_aws_control_tower_integration_on_aws">Best practices for using New Relic AWS Control Tower integration on AWS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For a list of best practices for New Relic integration, see the <a href="https://docs.newrelic.com/docs/new-relic-solutions/best-practices-guides/full-stack-observability/infrastructure-monitoring-best-practices-guide/" target="_blank" rel="noopener">Infrastructure monitoring best practices guide</a>.</p>
+<p>For a list of best practices for New Relic AWS Control Tower integration, see the <a href="https://docs.newrelic.com/docs/new-relic-solutions/best-practices-guides/full-stack-observability/infrastructure-monitoring-best-practices-guide/" target="_blank" rel="noopener">Infrastructure monitoring best practices guide</a>.</p>
 </div>
 <div class="paragraph">
 <p>For more information, see <a href="https://docs.newrelic.com/docs/new-relic-solutions/best-practices-guides/" target="_blank" rel="noopener">Best practices guides</a>.</p>
@@ -1500,7 +1518,7 @@ Unless you are customizing the Quick Start templates for your own deployment pro
 </table>
 </div>
 <div class="sect2">
-<h3 id="_parameters_for_deploying_new_relic">Parameters for deploying New Relic</h3>
+<h3 id="_parameters_for_deploying_new_relic_aws_control_tower_integration">Parameters for deploying New Relic AWS Control Tower integration</h3>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. New Relic configuration</caption>
 <colgroup>
@@ -1517,27 +1535,27 @@ Unless you are customizing the Quick Start templates for your own deployment pro
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic account ID.
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic account ID
 (<code>NewRelicAccountNumber</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic account number.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic account ID. See <a href="https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/account-id/" class="bare">https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/account-id/</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic NerdGraph access key.
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic NerdGraph User key
 (<code>NewRelicAccessKey</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic NerdGraph user key.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic NerdGraph User key. See <a href="https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#user-api-key" class="bare">https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#user-api-key</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic NerdGraph API endpoint.
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic NerdGraph API endpoint
 (<code>NerdGraphEndpoint</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://api.newrelic.com/graphql" class="bare">https://api.newrelic.com/graphql</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic NerdGraph endpoint URL.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic NerdGraph endpoint URL. Use default unless your New Relic account uses an EU data center. See <a href="https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/#authentication" class="bare">https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/#authentication</a></p></td>
 </tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Deployment scope and configuration</caption>
+<caption class="title">Table 2. Deployment configuration</caption>
 <colgroup>
 <col style="width: 16%;">
 <col style="width: 11%;">
@@ -1552,22 +1570,22 @@ Unless you are customizing the Quick Start templates for your own deployment pro
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Existing AWS accounts include list.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Existing AWS account ID list
 (<code>LaunchAccountList</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma-delimited list of accounts to include during initial launch. New accounts are automatically integrated with AWS Control Tower.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated string of existing (enrolled with Control Tower) AWS account IDs that you wish to monitor with New Relic. See <a href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html" class="bare">https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">StackSet name.
 (<code>StackSetName</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>NewRelic-Integration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AWS Control Tower integration StackSet name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic integration StackSet name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">StackSet template URL.
 (<code>StackSetUrl</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AWS Control Tower integration StackSet template URL.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New Relic integration StackSet template URL</p></td>
 </tr>
 </tbody>
 </table>
@@ -1651,7 +1669,7 @@ and to share your customizations with others.</p>
 </html>
 <!--
 repo commit:
-d22f81f456bda85c972ad935c39d1683a79ee0e3
+9b56e4e4c61c5bf3bee060b3895a39d1336d9a77
 
 submodule config:
 +a9d6c5903745c1091793d3cd1f960948919c2c9f docs/boilerplate (heads/main)

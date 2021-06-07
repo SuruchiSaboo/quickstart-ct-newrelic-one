@@ -2,18 +2,18 @@
 .New Relic configuration
 [width="100%",cols="16%,11%,73%",options="header",]
 |===
-|Parameter label (name) |Default value|Description|New Relic account ID.
-(`NewRelicAccountNumber`)|`**__Requires input__**`|New Relic account number.|New Relic NerdGraph access key.
-(`NewRelicAccessKey`)|`**__Requires input__**`|New Relic NerdGraph user key.|New Relic NerdGraph API endpoint.
-(`NerdGraphEndpoint`)|`https://api.newrelic.com/graphql`|New Relic NerdGraph endpoint URL.
+|Parameter label (name) |Default value|Description|New Relic account ID
+(`NewRelicAccountNumber`)|`**__Requires input__**`|New Relic account ID. See https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/account-id/|New Relic NerdGraph User key
+(`NewRelicAccessKey`)|`**__Requires input__**`|New Relic NerdGraph User key. See https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#user-api-key|New Relic NerdGraph API endpoint
+(`NerdGraphEndpoint`)|`https://api.newrelic.com/graphql`|New Relic NerdGraph endpoint URL. Use default unless your New Relic account uses an EU data center. See https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/#authentication
 |===
-.Deployment scope and configuration
+.Deployment configuration
 [width="100%",cols="16%,11%,73%",options="header",]
 |===
-|Parameter label (name) |Default value|Description|Existing AWS accounts include list.
-(`LaunchAccountList`)|`**__Requires input__**`|Comma-delimited list of accounts to include during initial launch. New accounts are automatically integrated with AWS Control Tower.|StackSet name.
-(`StackSetName`)|`NewRelic-Integration`|AWS Control Tower integration StackSet name.|StackSet template URL.
-(`StackSetUrl`)|`**__Requires input__**`|AWS Control Tower integration StackSet template URL.
+|Parameter label (name) |Default value|Description|Existing AWS account ID list
+(`LaunchAccountList`)|`**__Requires input__**`|Comma separated string of existing (enrolled with Control Tower) AWS account IDs that you wish to monitor with New Relic. See https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html|StackSet name.
+(`StackSetName`)|`NewRelic-Integration`|New Relic integration StackSet name|StackSet template URL.
+(`StackSetUrl`)|`**__Requires input__**`|New Relic integration StackSet template URL
 |===
 .AWS Quick Start configuration
 [width="100%",cols="16%,11%,73%",options="header",]
