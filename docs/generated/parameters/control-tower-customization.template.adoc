@@ -13,7 +13,7 @@
 |Parameter label (name) |Default value|Description|Existing AWS account ID list
 (`LaunchAccountList`)|`**__Requires input__**`|Comma separated string of existing (enrolled with Control Tower) AWS account IDs that you wish to monitor with New Relic. See https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html|StackSet name.
 (`StackSetName`)|`NewRelic-Integration`|New Relic integration StackSet name|StackSet template URL.
-(`StackSetUrl`)|`**__Requires input__**`|New Relic integration StackSet template URL
+(`StackSetUrl`)|`https://aws-quickstart.s3.amazonaws.com/quickstart-ct-newrelic-one/templates/newrelic-stack-set.yml`|New Relic integration StackSet template URL
 |===
 .AWS Quick Start configuration
 [width="100%",cols="16%,11%,73%",options="header",]
