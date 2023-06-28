@@ -85,6 +85,7 @@ Resources:
         Action: !Ref Action
         AdditionalParametersLicenseKey: !Ref AdditionalParametersLicenseKey
         NewRelicLogsEndpoint: !Ref NewRelicLogsEndpoint
+        NewRelicLicenseKey: !Ref NewRelicLicenseKey
       TimeoutInMinutes: 15
   NewRelicDefaultPolicyRole:
     Type: 'AWS::IAM::Role'
